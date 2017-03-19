@@ -1,6 +1,6 @@
 # Populate db NOW!
 
-Quick & dirty Node.js script that can fill your DB with generated data or SQL.
+A nimble Node.js script that can fill your DB with generated data or SQL.
 
 Credits for https://github.com/michaelmior/mysql-faker whose library I hacked & included into my project.
 

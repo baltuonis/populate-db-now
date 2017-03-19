@@ -1,7 +1,7 @@
 {
     "name": "batola_mx_faker",
     "version": "0.9.0",
-    "description": "Quick & dirty Node.js script that can fill your DB with generated data or SQL.",
+    "description": "A nimble Node.js script that can fill your DB with generated data or SQL.",
     "main": "index.js",
 
     "dependencies": {
