@@ -1,0 +1,15 @@
+{
+    "name": "batola_mx_faker",
+    "version": "0.9.0",
+    "description": "Quick & dirty Node.js script that can fill your DB with generated data or SQL.",
+    "main": "index.js",
+
+    "dependencies": {
+        "faker": "^3.1.0",
+        "mysql": "^2.12.0",
+        "progress": "^1.1.8",
+        "synchronize": "^2.0.0"
+    },
+    "devDependencies": {},
+    "license": "MIT"
+}
