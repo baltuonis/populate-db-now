@@ -8,11 +8,15 @@ Credits for https://github.com/michaelmior/mysql-faker whose library I hacked & 
 
 * Consumes JS generators (using faker.js & mysql-faker.js)
 * Consumes SQL too!
-* Works in synchornized manner, consumes generators/sql in sorted sequence: `000_*.sql, 001_*.sql, 002_*.js 003_*.sql` (slower, but I needed this for mainting ForeignKeys)
+* Works in synchornized manner, consumes generators/sql in sorted sequence: `000_*.sql, 001_*.sql, 002_*.js 003_*.sql` (slower, but I needed this for maintaining ForeignKeys)
 * Is pretty fast
 * Has progress bars!
 
 ## Quick start
+
+### Install dependencies
+
+`npm install`
 
 ### Set your DB params
 
@@ -37,29 +41,37 @@ Will create table and populate with fake data
 ```
 var mysql_faker = require('../mysql-faker.js');
 
-var table = (new mysql_faker.Table('regions', 2));
+var count = 100;
+var table = (new mysql_faker.Table('regions', count));
 
-table.address_state('name', 1)
-    // Relationships
+table.address_state('name', 1);
+// Relationships
 table.random_number('country_id', {
     min: 1,
     max: 5
-})
+});
 
-module.exports.table = table
+module.exports.table = table;
+
 ```
 
 ### Write SQL
 
-To `generators/001_set_db_utf8.sql`
+To `generators/001_create_regions.sql`
 
 ```
-ALTER DATABASE xxxxxxxx CHARACTER SET utf8 COLLATE utf8_unicode_ci;
--- Some more crazy stuff
+CREATE TABLE IF NOT EXISTS regions (
+    name      varchar(40),
+    country_id       integer
+);
+
+TRUNCATE TABLE regions;
 ```
 
+### Start populating
 
- 
+` node index.js `
+
 ## Generating data
 
 I am using faker.js and hacked mysql-faker.js (which is included in project)
@@ -68,6 +80,7 @@ More info about field arguments https://github.com/Marak/faker.js/wiki/Text
  
 ### Faker types
 
+```
 var fakerTypes = {
   'name': [
     'firstName',
@@ -192,3 +205,4 @@ var fakerTypes = {
     'phrase'
   ]
 }
+```
