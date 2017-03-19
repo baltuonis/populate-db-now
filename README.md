@@ -36,7 +36,7 @@ To `generators/000_region.js`
 
 Will create table and populate with fake data
 
-** WARNING ** - before executing JS generator script will TRUNCATE table
+**WARNING** - before executing JS generator, script will TRUNCATE table
 
 ```
 var mysql_faker = require('../mysql-faker.js');
@@ -76,7 +76,7 @@ TRUNCATE TABLE regions;
 
 I am using faker.js and hacked mysql-faker.js (which is included in project)
 
-More info about field arguments https://github.com/Marak/faker.js/wiki/Text
+More info about method arguments https://github.com/Marak/faker.js/wiki/Text
  
 ### Faker types
 
