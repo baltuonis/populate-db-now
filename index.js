@@ -15,6 +15,7 @@ var mysql_faker = require('./mysql-faker.js'),
     mysql = require('mysql'),
     generators_dir = 'generators',
     generators_queue = [],
+
     mysql_options = {
         host: "localhost",
         user: "root",

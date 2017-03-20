@@ -8,7 +8,7 @@ Credits for https://github.com/michaelmior/mysql-faker whose library I hacked & 
 
 * Consumes JS generators (using faker.js & mysql-faker.js)
 * Consumes SQL too!
-* Works in synchornized manner, consumes generators/sql in sorted sequence: `000_*.sql, 001_*.sql, 002_*.js 003_*.sql` (slower, but I needed this for maintaining ForeignKeys)
+* Works in synchronized manner, consumes generators/sql in sorted sequence: `000_*.sql, 001_*.sql, 002_*.js 003_*.sql` (slower, but I needed this for maintaining ForeignKeys)
 * Is pretty fast
 * Has progress bars!
 

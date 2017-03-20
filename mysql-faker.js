@@ -270,10 +270,6 @@ function insertCount(connection, table, keys, sql, count) {
  * database specified by the options parameter
  */
 function insert(tables, options, progress = false, connection, callback) {
-    // Connect to the MySQL server
-    // var connection = mysql.createConnection(options);
-    // connection.connect();
-
     // Start a fiber so we can wait for inserts before proceeding
     sync.fiber(function() {
         tables.forEach(function(table) {
@@ -303,7 +299,6 @@ function insert(tables, options, progress = false, connection, callback) {
             }
         });
 
-        // connection.end();
         callback(false, 'done')
     });
 }
